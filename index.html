@@ -12,43 +12,45 @@
     <title>Portfolio | Rencas Dev </title>
 </head>
 <body>
-    <header class="header">
-        <div class="contenedor">
-            <div class="contenido-header">
-                <div class="logo">
-                    <a href="index.html" class="logo">
-                        <img src="src/img/Logotype-Rencas.png" alt="Logotipo de Rencas">
-                    </a>
-                </div>
-                <nav class="navegacion">
+    <header class="header" id="home"> 
+        <div class="navegacion">
+            <div class="contenedor">
+                <div class="contenido-header">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="src/img/logo.png" alt="Logo de Rencas">
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <svg class = "icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"/></svg>
+                            
+                        <svg class="icon-close none"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 
+                        7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"/></svg>
+                    </div>
+                    <nav class="enlaces">
                         <a href="#home">Home</a>
                         <a href="#about">About</a>
                         <a href="#skills">Skills</a>
                         <a href="#projects">Projects</a>
                         <a href="#contact">Contact</a>
-                </nav>
-            </div>
-            
+                    </nav>
+                </div>  
+            </div> 
+        </div>
+        <div class="textos contenedor">
+            <h1 class="text-title">
+                Hello, <br> I'am Renzo, <br> Web Developer
+            </h1>
+            <h2 class="text-subtitle">Frontend Developer</h2>
+            <a href="#contact">
+                <button class="text-button" href="#contact">
+                    CONTACT ME
+                </button>
+            </a>
         </div>
     </header>
-
-    <section class="inicio" id="home">
-        <section class="hero-image">
-            <div class="contenedor contenido-hero">
-                <h1 class="hero-image-title">
-                    Hello, <br> I'am Renzo, <br> Web Developer
-                </h1>
-                <h2 class="hero-image-subtitle">Frontend Developer</h2>
-                <button class="button">
-                    <svg clas="button-arrow" width="40px" height="40px" viewBox="0 0 24 24" id="_24x24_On_Light_Arrow-Right" data-name="24x24/On Light/Arrow-Right" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="view-box" width="50px" height="50px" fill="none"/>
-                        <path id="Shape" d="M.22,10.22A.75.75,0,0,0,1.28,11.28l5-5a.75.75,0,0,0,0-1.061l-5-5A.75.75,0,0,0,.22,1.28l4.47,4.47Z" transform="translate(9.25 6.25)" fill="#000"/>
-                        </svg>
-                    <p class="button-name">Contact me</p>
-                </button>
-            </div>
-        </section>
-    </section>
 
     <section class="about" id="about">
         <section class="contenedor">
@@ -282,13 +284,6 @@
                     <div class="logo">
                         <img src="src/img/Logotype-dark-Rencas.png" alt="">
                     </div>
-                    <div class="enlaces">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
-                    </div>
                     <div class="red-social">
                         <div class="red-social-item">
                             <img src="src/img/instagram-dark.svg" alt="">
@@ -311,6 +306,6 @@
             </div>
         </div>
     </footer>
-    <script src="js/app.js" type="module"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

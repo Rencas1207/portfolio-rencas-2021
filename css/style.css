@@ -20,24 +20,29 @@ html{
     box-sizing: border-box;
     font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 *,
 *::before,
 *::after{
+    margin: 0;
+    padding: 0;
     box-sizing: inherit;
 }
 
 body{
-    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
 }
 /* Globales */
 .contenedor{
-    /* border: 1px solid green; */
     max-width: 120rem;
-    width: 92%;
+    width: 95%;
     margin: 0 auto;
+    /* border: 1px solid green; */
 }
 
 img{
@@ -50,7 +55,6 @@ p{
 
 a{
     text-decoration: none;
-    margin: 0;
 }
 
 h1{
@@ -62,76 +66,78 @@ h2{
 }
 
 [id]{
-    scroll-margin-top: 5ex;
+    scroll-margin-top: 7ex;
 }
 
-
-/* HEADER */
 .header{
-    position: sticky;
-    top: 0;
+    background: url(../src/img/hero-image.png) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navegacion{
+    position: fixed;
+    width: 100%;
+    height: 6rem;
     background: var(--main-color);
-    box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.65);
 }
 
 .contenido-header{
     display: flex;
-    padding: 1rem 0rem;
-    height: 7rem;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    /* border: 2px solid red; */
 }
 
-.contenido-header img{
-    width: 17rem;
-    align-items: center;
-    cursor: pointer;
-    /* padding-l: 2rem; */
-    /* border: 2px solid blue; */
+ .logo img{
+    width: 16rem;
 }
 
-.navegacion{
-    display: flex;
-    justify-content: center;
-}
-
-.navegacion a{
-    font-size: 2.8rem;
-    margin-left: 4rem;
+.enlaces a{
+    font-size: 2.5rem;
+    margin-left: 3.5rem;
     color: var(--text-color);
     font-family: var(--fuenteRanchers);
+    text-decoration: none;
     transition: all .5s;
     text-shadow: -3px -3px 3px var(--white), 3px -3px 3px var(--white), -3px 3px 3px var(--white), 3px 3px 3px var(--white);
 }
 
-.navegacion a:hover{
+.enlaces a:hover{
     color: var(--fuxia-color);
 }
 
-/* HERO IMAGE */
-.hero-image{
-    background: url(../src/img/hero-image.png);
-    background-attachment: fixed;
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+.textos{
     display: flex;
-    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    height: 100%;
+    margin-top: 5.6rem;
 }
 
-.hero-image-title{
-    font-size: 8.5rem;
+.icon{
+    display: none;
+    cursor: pointer;
+}
+
+.none{
+    display: none;
+}
+
+.text-title{
+    font-size: 7rem;
     color: var(--white);
     font-family: var(--fuenteRanchers);
     text-shadow: -3px -3px 25px var(--black), 3px -3px 25px var(--black), -3px 3px 25px var(--black), 3px 3px 25px var(--black);
-    letter-spacing: 8.5px;
+    letter-spacing: 7px;
+    /* line-height: 8rem; */
 }
 
-.hero-image-subtitle{
+.text-subtitle{
     color: var(--lead-number);
     font-size: 5.5rem;
     font-family: var(--fuenteRancho);
@@ -139,39 +145,94 @@ h2{
     margin-top: 2rem;
 }
 
-.button{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 10px;
-    padding: 0 20px;
-    background-color: var(--main-color);
-    cursor: pointer;
+.text-button{
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    background: var(--main-color);
     margin-top: 2rem;
-} 
-
-.button-arrow{
-    color: var(--fuxia-color);
-    fill: var(--fuxia-color);
-    filter: var(--fuxia-color);
-}
-
-.button-name{
-    text-transform: uppercase;
-    font-family: var(--fuenteRanchers);
     font-size: 2.5rem;
-    color: var(--fuxia-color);
-    text-shadow: -3px -3px 3px var(--white), 3px -3px 3px var(--white), -3px 3px 3px var(--white), 3px 3px 3px var(--white);
+    font-family: var(--fuenteRanchers);
+    color: var(--text-color);
+    cursor: pointer;
 }
 
-.button:hover{
-    background-color: var(--fuxia-color);
+.text-button:hover{
+    background: var(--fuxia-color);
+    color: var(--white);
 }
 
-.button .button-name:hover{
-    color: var(--black);
-}
+@media screen and (max-width: 768px){
+    .textos{
+        align-items: center;
+        text-align: center;
+        
+    }
 
+    .text-title{
+        font-size: 7rem;
+    }
+
+    .text-subtitle{
+        font-size: 5rem;
+    }
+
+    .enlaces{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        /* height: 92.6vh; */
+        height: 100vh;
+        background-color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 5.4rem;
+        padding: 0;
+        text-align: center;
+        align-items: center;
+        transition: all 0.4s ease;
+    }
+
+    .enlaces a{
+        font-size: 3rem;    
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .enlaces a:first-child{
+        margin-top: 5rem;
+    }
+
+    .enlaces a:hover{
+        background: var(--main-color);
+    }
+
+    .enlaces.is-active{
+        bottom: 0;
+    }
+
+    .icon{
+        display: flex;
+    }
+
+    .icon-menu, .icon-close{
+        fill: var(--fuxia-color);
+        width: 48px;
+        height: 48px;
+        margin-right: -8px;
+        z-index: 1000;
+    }
+
+    .logo{
+        z-index: 1000;
+    }
+    .text-button{
+        width: 100%;
+    }
+}
 
 /* ABOUT */
 .about{
@@ -192,12 +253,11 @@ h2{
     font-family: var(--fuenteRancho);
 }
 
-
 .about-title-number{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 5rem;  
+    padding: 3rem 0rem;  
 }
 
 .about-title h2{
@@ -256,7 +316,7 @@ h2{
     padding: 1rem 3rem;
     text-transform: uppercase;
     background: var(--main-color);
-    color: var(--fuxia-color);
+    color: white;
     border: none;
     cursor: pointer;
     margin-top: 3rem;
@@ -271,7 +331,7 @@ h2{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 5rem;  
+    padding: 3rem 0rem;  
 }
 
 .skills-title h2{
@@ -345,7 +405,7 @@ h2{
 }  
 
 .skills-image p{
-    padding: 3rem;
+    padding-bottom: 2rem;
     font-size: 3rem;
     font-family: var(--fuenteRancho);
     color: var(--black);
@@ -356,14 +416,14 @@ h2{
 /* PROJECTS */
 .projects{
     background-color: var(--main-color);
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
 }
 
 .projects-title-number{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 5rem;  
+    padding: 3rem 0rem;  
 }
 
 .projects-title h2{
@@ -382,7 +442,7 @@ h2{
 
 .projects-description p{
     margin: 0rem 20rem;
-    font-size: 2.8rem;
+    font-size: 3rem;
     text-align: center;
     font-family: var(--fuenteRancho);
 }
@@ -460,14 +520,13 @@ h2{
     background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(214,220,229,1) 50%, rgba(214,220,229,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6dce5', GradientType=1 );
     height: auto;
-    /* margin-bottom: 5rem; */
 }
 
 .contact-title-number{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 5rem;  
+    padding: 3rem 0rem;  
 }
 
 .contact-title h2{
@@ -575,7 +634,8 @@ form{
 /* FOOTER */
 .footer{
     background-color: var(--text-color);
-    height: 15rem;
+    height: auto;
+    padding: 2rem 0rem;
 }
 
 .contenido-footer{
@@ -586,10 +646,10 @@ form{
 
 .first-section-footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+    /* margin-top: .5rem; */
+    margin-bottom: 2rem;
 }
 
 .second-section-footer{
@@ -599,14 +659,6 @@ form{
     margin-top: 1rem;
 }
 
-.contenido-footer .enlaces a{
-    font-size: 2.8rem;
-    margin-left: 4rem;
-    color: var(--fuxia-color);
-    font-family: var(--fuenteRanchers);
-    transition: all .5s;
-    text-shadow: -3px -3px 3px var(--white), 3px -3px 3px var(--white), -3px 3px 3px var(--white), 3px 3px 3px var(--white);
-}
 
 .contenido-footer .logo img{
     width: 17rem;
@@ -668,24 +720,19 @@ body::-webkit-scrollbar-thumb{
 
 
 @media screen and (max-width: 1200px){
-    body{
-        width: 100%;
-        overflow-x: hidden;
-    }
-
     .about-text{
         font-size: 3.2rem;
-    }
-
-    .contenedor-projects{
-        grid-template-columns: 45% 45%;
-        margin: 0 auto;
-    }    
+    } 
 
     .skills-icons{
         grid-template-columns: repeat(3,1fr);
         row-gap: 2.5rem;
     }
+
+    .contenedor-projects{
+        grid-template-columns: 45% 45%;
+        margin: 0 auto;
+    }  
     
     .project-1, .project-2, .project-3,
     .project-4, .project-5, .project-6{
@@ -718,7 +765,7 @@ body::-webkit-scrollbar-thumb{
 
 @media screen and (max-width: 1024px){
     .about-text{
-        font-size: 2.8rem;
+        font-size: 3.1rem;
     }
 
     .skills-icons{
@@ -755,10 +802,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 992px){
-    body{
-        width: 100%;
-        overflow-x: hidden;
-    }
+
+    .contenedor-projects{
+        grid-template-columns: 100%;
+        margin: 0 auto;
+    }  
 
     .projects-description p{
         margin: 0rem 5rem;
@@ -766,20 +814,20 @@ body::-webkit-scrollbar-thumb{
 
     .project-1, .project-2, .project-3,
     .project-4, .project-5, .project-6{
-        width: 30rem;
-        height: 22rem;
+        width: 100%;
+        height: 100%;
     }
 
     .project-1-content p, .project-2-content p, .project-3-content p,
     .project-4-content p, .project-5-content p, .project-6-content p{
-        font-size: 1.6rem;
+        font-size: 3.5rem;
     }
         
     .project-1-content img, .project-2-content img, .project-3-content img,
     .project-4-content img, .project-5-content img, .project-6-content img{
-        width: 380px;
-        height: 150px;
-        padding-top: .5rem;
+        width: 98%;
+        height: 35rem;
+        padding-top: 1rem;
     }
 
     .contact{
@@ -809,17 +857,51 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 768px){
-    body{
-        width: 100%;
-        overflow-x: hidden;
+    .about-title-number{
+        justify-content: center;
+    }
+    
+    .about-title hr{
+        margin-left: -1.8rem;
     }
 
-    .hero-image-title, .hero-image-subtitle, button{
-        text-align: center;
-        margin: 0 auto;
+    .about-number{
+        display: none;
     }
 
-    .navegacion{
+    .skills-title-number{
+        justify-content: center;
+    }
+
+    .skills-title hr{
+        margin-left: -1.8rem;
+    }
+
+    .skills-number{
+        display: none;
+    }
+
+    .projects-title-number{
+        justify-content: center;
+    }
+
+    .projects-title hr{
+        margin-left: -2.5rem;
+    }
+
+    .projects-number{
+        display: none;
+    }
+
+    .contact-title-number{
+        justify-content: center;
+    }
+
+    .contact-title hr{
+        margin-left: -2.5rem;
+    }
+
+    .contact-number{
         display: none;
     }
 
@@ -830,7 +912,7 @@ body::-webkit-scrollbar-thumb{
 
     .about-text{
         order: 2;
-        font-size: 4rem;
+        font-size: 4.8rem;
         margin-top: 3rem;
     }
 
@@ -858,26 +940,21 @@ body::-webkit-scrollbar-thumb{
         margin: 0 auto;
     }
 
-    .contenedor-projects{
-        grid-template-columns: 90%;
-        margin: 0 auto;
-    }    
-
     .project-1, .project-2, .project-3,
     .project-4, .project-5, .project-6{
-        width: 50rem;
-        height: 32rem;
+        width: 100%;
+        height: 100%;
     }
 
     .project-1-content p, .project-2-content p, .project-3-content p,
     .project-4-content p, .project-5-content p, .project-6-content p{
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
         
     .project-1-content img, .project-2-content img, .project-3-content img,
     .project-4-content img, .project-5-content img, .project-6-content img{
-        width: 450px;
-        height: 240px;
+        width: 98%;
+        height: 35rem;
         padding-top: 1rem;
     }
 
@@ -908,12 +985,170 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-@media screen and (max-width: 576px){
-    body, html{
-        width: 100%;
-        overflow-x: hidden;
+@media screen and (max-width: 650px){
+
+    .about-title h2, .skills-title h2, 
+    .projects-title h2, .contact-title h2{
+        font-size: 4.5rem;
     }
 
+    .about-title hr{
+        width: 120%;
+        border: 4px solid var(--link-bar);
+        /* margin: 0; */
+        justify-content: center;
+    }
+
+    .text-title{
+        font-size: 6.5rem;
+    }    
+
+    .projects-title{
+        font-size: 1rem;
+    }
+
+    .about-text{
+        font-size: 3.5rem;
+    }
+
+    .skills-icons{
+        grid-template-columns: 23% 23% 23%;
+        margin-top: 3rem;
+    }
+
+    .project-1, .project-2, .project-3,
+    .project-4, .project-5, .project-6{
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-1-content p, .project-2-content p, .project-3-content p,
+    .project-4-content p, .project-5-content p, .project-6-content p{
+        font-size: 2.3rem;
+    }
+        
+    .project-1-content img, .project-2-content img, .project-3-content img,
+    .project-4-content img, .project-5-content img, .project-6-content img{
+        width: 98%;
+        height: 28rem;
+        padding-top: 1rem;
+    }
+
+    .contenedor-projects{
+        grid-template-columns: 95%;
+        margin: 0 auto;
+    }  
+
+}
+
+@media screen and (max-width: 480px){
+
+    .text-title{
+        font-size: 5.2rem;
+    }    
+    
+    .text-subtitle{
+        font-size: 4rem;
+    }
+
+    .about-text{
+        font-size: 3rem;
+    }
+
+    .about-button{
+        font-size: 2.5rem;
+    }
+
+    .skills-image-content p{
+        font-size: 2.3rem;
+        margin: 0;
+    }
+
+    .skills-image-content img{
+        display: none;
+    }
+
+    .projects-description p{
+        font-size: 2.3rem;
+        margin: 0;
+    }
+
+    .contact-description p{
+        font-size: 2.3rem;
+        margin: 0;
+    }
+
+    .skills-icons{
+        grid-template-columns: 38% 38%;
+        margin-top: 3rem;
+    }
+
+    .contenedor-projects{
+        grid-template-columns: 100%;
+        margin: 0 auto;
+    }  
+
+    .project-1, .project-2, .project-3,
+    .project-4, .project-5, .project-6{
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-1-content p, .project-2-content p, .project-3-content p,
+    .project-4-content p, .project-5-content p, .project-6-content p{
+        font-size: 1.8rem;
+    }
+        
+    .project-1-content img, .project-2-content img, .project-3-content img,
+    .project-4-content img, .project-5-content img, .project-6-content img{
+        width: 100%;
+        height: 20rem;
+        padding-top: 1rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 350px){
+
+    .skills-image-content p{
+        font-size: 2rem;
+        width: 100%;
+        margin: 0;
+    }
+
+    .skills-icons{
+        margin: 0;
+    }
+
+    .projects-description p{
+        font-size: 2rem;
+        margin: 0 3rem;
+    }
+
+    .contact-description p{
+        font-size: 2rem;
+        margin: 0rem 3rem;
+    }
+
+
+    .project-1, .project-2, .project-3,
+    .project-4, .project-5, .project-6{
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-1-content p, .project-2-content p, .project-3-content p,
+    .project-4-content p, .project-5-content p, .project-6-content p{
+        font-size: 1.3rem;
+    }
+        
+    .project-1-content img, .project-2-content img, .project-3-content img,
+    .project-4-content img, .project-5-content img, .project-6-content img{
+        width: 100%;
+        height: 15rem;
+        padding-top: 1rem;
+    }
 }
 
 
