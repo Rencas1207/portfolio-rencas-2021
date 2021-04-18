@@ -70,11 +70,12 @@ h2{
 }
 
 .header{
-    background: url(../src/img/hero-image.png) no-repeat center center fixed;
+    background: url(../src/img/hero-image.webp) no-repeat center center fixed;
     background-size: cover;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    
 }
 
 .navegacion{
@@ -85,12 +86,14 @@ h2{
     display: flex;
     align-items: center;
     box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.65);
+    z-index: 999;
 }
 
 .contenido-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
  .logo img{
@@ -189,7 +192,7 @@ h2{
         flex-direction: column;
         justify-content: space-evenly;
         /* margin-top: 5.4rem; */
-        /* padding: 0; */
+        padding: 0;
         text-align: center;
         align-items: center;
         transition: all 0.4s ease;
@@ -207,9 +210,9 @@ h2{
         margin: 0;
     }
 
-    /* .enlaces a:first-child{
+    .enlaces a:first-child{
         margin-top: 5rem;
-    } */
+    }
 
     .enlaces a:hover{
         background: var(--main-color);
@@ -465,17 +468,17 @@ h2{
 
 .contenedor-projects{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 1rem;
-    row-gap: 2rem;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2rem;
+    row-gap: 3rem;
     justify-content: center;
     padding: 3rem 0;
 }
 
 .project-1, .project-2, .project-3,
 .project-4, .project-5, .project-6{
-    width: 32rem;
-    height: 22rem;
+    width: 95%;
+    height: 100%;
     border-radius: 2rem;
     background-color: var(--text-color);
     margin: 0 auto;
@@ -484,33 +487,114 @@ h2{
 .project-1-content, .project-2-content, .project-3-content,
 .project-4-content, .project-5-content, .project-6-content{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     color: var(--white);
     padding: 2rem;
 }
 
-.project-1-content p, .project-2-content p, .project-3-content p,
-.project-4-content p, .project-5-content p, .project-6-content p{
+.project-1-content > p, .project-2-content > p, .project-3-content > p,
+.project-4-content > p, .project-5-content > p, .project-6-content > p{
     display: block;
     color: var(--white);
     text-transform: uppercase;
     margin-top: 1.5rem;
     font-family: var(--fuenteRanchers);
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     letter-spacing: 1px;
     text-align: center;
 }
     
 .project-1-content img, .project-2-content img, .project-3-content img,
 .project-4-content img, .project-5-content img, .project-6-content img{
-    width: 300px;
-    height: 150px;
+    width: 100%;
+    height: 19rem;
     padding-top: 0.3rem;
+    /* z-index: 99; */
+}
+
+
+.project-1-content:hover .project-hover,
+.project-2-content:hover .project-hover,
+.project-3-content:hover .project-hover,
+.project-4-content:hover .project-hover,
+.project-5-content:hover .project-hover,
+.project-6-content:hover .project-hover{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 48% 48%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    width: 90%;
+    height: 74%;
+    position: absolute;
+    padding-top: 1rem;
+    font-family: var(--fuenteRancho);
+    border: 3px solid white;
+    border-radius: 10px;
+    
+}
+
+.project-hover{
+    display: none;
+}
+
+.project-hover-description{
+    grid-column: 1 / 3;
+    text-align: center;
+    margin: .5rem 1rem;
+    font-size: 2.4rem;
+    animation: descriptionBottom 100ms linear;
+}
+
+@keyframes descriptionBottom{
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+.project-hover button{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: var(--fuenteRancho);
+    background: #D6DCE5;
+    border: 0;
+    border-radius: 4rem;
+    cursor: pointer;
+    margin: 2.2rem 1rem;
+}
+
+.project-hover-button-view{
+    animation: buttonView 100ms linear;
+}
+
+@keyframes buttonView{
+    from{
+        transform: translateX(-20%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.project-hover-button-details{
+    animation: buttonDetails 100ms linear;
+}
+
+@keyframes buttonDetails{
+    from{
+        transform: translateX(20%);
+    }
+    to{
+        transform: translateX(0%);
+    }
 }
 
 /* CONTACT */
-
 .contact{
     background: rgba(255,255,255,1);
     background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(214,220,229,1) 50%, rgba(214,220,229,1) 100%);
@@ -558,7 +642,6 @@ h2{
 }
 
 /* CONTENIDO CONTACT */
-
 .contenido-contact{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -630,7 +713,6 @@ form{
     display: flex;
     margin-left: 2rem;
 }
-
 
 /* FOOTER */
 .footer{
@@ -708,7 +790,7 @@ form{
 }
 
 /* SCROLL COLOR */
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     width: 12px;
     background: #e7a61a;
 }
@@ -717,7 +799,7 @@ body::-webkit-scrollbar-thumb{
     background: var(--text-color);
     border-radius: 8px;
     border: 3px solid var(--white);
-}
+} */
 
 
 @media screen and (max-width: 1200px){
@@ -741,8 +823,8 @@ body::-webkit-scrollbar-thumb{
         height: 28rem;
     }
 
-    .project-1-content p, .project-2-content p, .project-3-content p,
-    .project-4-content p, .project-5-content p, .project-6-content p{
+    .project-1-content > p, .project-2-content > p, .project-3-content > p,
+    .project-4-content > p, .project-5-content > p, .project-6-content > p{
         font-size: 2.1rem;
     }
         
@@ -751,6 +833,26 @@ body::-webkit-scrollbar-thumb{
         width: 370px;
         height: 200px;
         padding-top: .5rem;
+    }
+
+    .project-1-content:hover .project-hover,
+    .project-2-content:hover .project-hover,
+    .project-3-content:hover .project-hover,
+    .project-4-content:hover .project-hover,
+    .project-5-content:hover .project-hover,
+    .project-6-content:hover .project-hover{
+        width: 90%;
+        height:74%;
+    }
+
+    .project-hover-description{
+        margin: .5rem 1rem;
+        font-size: 2.6rem;
+    }
+
+    .project-hover button{
+        font-size: 2rem;
+        margin: 1.9rem;
     }
     
     .first-section-footer .enlaces a{
@@ -819,16 +921,38 @@ body::-webkit-scrollbar-thumb{
         height: 100%;
     }
 
-    .project-1-content p, .project-2-content p, .project-3-content p,
-    .project-4-content p, .project-5-content p, .project-6-content p{
+    .project-1-content > p, .project-2-content > p, .project-3-content > p,
+    .project-4-content > p, .project-5-content > p, .project-6-content > p{
         font-size: 3.5rem;
     }
         
     .project-1-content img, .project-2-content img, .project-3-content img,
     .project-4-content img, .project-5-content img, .project-6-content img{
-        width: 98%;
-        height: 35rem;
-        padding-top: 1rem;
+        width: 97%;
+        height: 48rem;
+        margin-top: 1rem;
+    }
+
+    .project-1-content:hover .project-hover,
+    .project-2-content:hover .project-hover,
+    .project-3-content:hover .project-hover,
+    .project-4-content:hover .project-hover,
+    .project-5-content:hover .project-hover,
+    .project-6-content:hover .project-hover{
+        width: 93%;
+        height:82%;
+        padding-top: 6rem;
+        margin-top: 1rem;
+    }
+
+    .project-hover-description{
+        margin: .5rem 3rem;
+        font-size: 6.2rem;
+    }
+
+    .project-hover button{
+        font-size: 3rem;
+        margin: 5rem;
     }
 
     .contact{
@@ -947,8 +1071,8 @@ body::-webkit-scrollbar-thumb{
         height: 100%;
     }
 
-    .project-1-content p, .project-2-content p, .project-3-content p,
-    .project-4-content p, .project-5-content p, .project-6-content p{
+    .project-1-content > p, .project-2-content > p, .project-3-content > p,
+    .project-4-content > p, .project-5-content > p, .project-6-content > p{
         font-size: 3rem;
     }
         
@@ -956,7 +1080,26 @@ body::-webkit-scrollbar-thumb{
     .project-4-content img, .project-5-content img, .project-6-content img{
         width: 98%;
         height: 35rem;
-        padding-top: 1rem;
+        margin-top: .5rem;
+    }
+
+    .project-1-content:hover .project-hover,
+    .project-2-content:hover .project-hover,
+    .project-3-content:hover .project-hover,
+    .project-4-content:hover .project-hover,
+    .project-5-content:hover .project-hover,
+    .project-6-content:hover .project-hover{
+        width: 93%;
+        height:78%;
+        padding-top: 3rem;
+    }
+
+    .project-hover-description{
+        font-size: 4.6rem;
+    }
+
+    .project-hover button{
+        margin: 4rem;
     }
 
     .contact{
@@ -996,7 +1139,6 @@ body::-webkit-scrollbar-thumb{
     .about-title hr{
         width: 120%;
         border: 4px solid var(--link-bar);
-        /* margin: 0; */
         justify-content: center;
     }
 
@@ -1023,16 +1165,35 @@ body::-webkit-scrollbar-thumb{
         height: 100%;
     }
 
-    .project-1-content p, .project-2-content p, .project-3-content p,
-    .project-4-content p, .project-5-content p, .project-6-content p{
-        font-size: 2.3rem;
+    .project-1-content > p, .project-2-content > p, .project-3-content > p,
+    .project-4-content > p, .project-5-content > p, .project-6-content > p{
+        font-size: 2.44rem;
     }
         
     .project-1-content img, .project-2-content img, .project-3-content img,
     .project-4-content img, .project-5-content img, .project-6-content img{
         width: 98%;
         height: 28rem;
-        padding-top: 1rem;
+    }
+
+    .project-1-content:hover .project-hover,
+    .project-2-content:hover .project-hover,
+    .project-3-content:hover .project-hover,
+    .project-4-content:hover .project-hover,
+    .project-5-content:hover .project-hover,
+    .project-6-content:hover .project-hover{
+        width: 92%;
+        height:78%;
+        margin-top: 0rem;
+    }
+
+    .project-hover-description{
+        font-size: 3.5rem;
+    }
+
+    .project-hover button{
+        font-size: 2rem;
+        margin: 3rem 1.5rem;
     }
 
     .contenedor-projects{
@@ -1042,8 +1203,7 @@ body::-webkit-scrollbar-thumb{
 
 }
 
-@media screen and (max-width: 480px){
-
+@media screen and (max-width: 485px){
     .text-title{
         font-size: 5.2rem;
     }    
@@ -1095,22 +1255,42 @@ body::-webkit-scrollbar-thumb{
         height: 100%;
     }
 
-    .project-1-content p, .project-2-content p, .project-3-content p,
-    .project-4-content p, .project-5-content p, .project-6-content p{
+    .project-1-content > p, .project-2-content > p, .project-3-content > p,
+    .project-4-content > p, .project-5-content > p, .project-6-content > p{
         font-size: 1.8rem;
     }
         
     .project-1-content img, .project-2-content img, .project-3-content img,
     .project-4-content img, .project-5-content img, .project-6-content img{
         width: 100%;
-        height: 20rem;
-        padding-top: 1rem;
+        height: 25rem;
+        margin-top: 0rem;
     }
 
+    .project-1-content:hover .project-hover,
+    .project-2-content:hover .project-hover,
+    .project-3-content:hover .project-hover,
+    .project-4-content:hover .project-hover,
+    .project-5-content:hover .project-hover,
+    .project-6-content:hover .project-hover{
+        width: 93%;
+        height: 77%;
+        margin-top: 0rem;
+    }
+
+    .project-hover-description{
+        font-size: 2.6rem;
+        margin: 1rem 2.8rem;
+    }
+
+    .project-hover button{
+        font-size: 1.8rem;
+        margin: 2.5rem 1rem;
+    }
     
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 370px){
 
     .skills-image-content p{
         font-size: 2rem;
@@ -1139,16 +1319,37 @@ body::-webkit-scrollbar-thumb{
         height: 100%;
     }
 
-    .project-1-content p, .project-2-content p, .project-3-content p,
-    .project-4-content p, .project-5-content p, .project-6-content p{
-        font-size: 1.3rem;
+    .project-1-content > p, .project-2-content > p, .project-3-content > p,
+    .project-4-content > p, .project-5-content > p, .project-6-content > p{
+        font-size: 1.35rem;
     }
         
     .project-1-content img, .project-2-content img, .project-3-content img,
     .project-4-content img, .project-5-content img, .project-6-content img{
         width: 100%;
-        height: 15rem;
+        height: 20rem;
         padding-top: 1rem;
+    }
+
+    .project-1-content:hover .project-hover,
+    .project-2-content:hover .project-hover,
+    .project-3-content:hover .project-hover,
+    .project-4-content:hover .project-hover,
+    .project-5-content:hover .project-hover,
+    .project-6-content:hover .project-hover{
+        width: 90%;
+        height: 75%;
+        margin-top: 0rem;
+    }
+
+    .project-hover-description{
+        font-size: 2rem;
+        margin: 0rem 2rem;
+    }
+
+    .project-hover button{
+        font-size: 1.5em;
+        margin: 2.5rem 1rem;
     }
 }
 
