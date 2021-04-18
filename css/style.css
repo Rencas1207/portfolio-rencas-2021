@@ -179,7 +179,7 @@ h2{
 
     .enlaces{
         position: fixed;
-        bottom: -100%;
+        top: -100%;
         left: 0%;
         right: 0%;
         width: 100%;
@@ -196,6 +196,11 @@ h2{
         transition: all 0.4s ease;
     }
 
+    .enlaces.is-active{
+        top: 0%;
+    }
+
+
     .enlaces a{
         font-size: 3rem;    
         width: 100%;
@@ -209,10 +214,6 @@ h2{
 
     .enlaces a:hover{
         background: var(--main-color);
-    }
-
-    .enlaces.is-active{
-        bottom: 0%;
     }
 
     .icon{
