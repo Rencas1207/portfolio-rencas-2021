@@ -75,7 +75,6 @@ h2{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    
 }
 
 .navegacion{
@@ -93,7 +92,6 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
  .logo img{
@@ -119,7 +117,8 @@ h2{
     flex-direction: column; 
     justify-content: center;
     height: 100%;
-    /* margin-top: 5.6rem; */
+    /* border: 3px solid red; */
+    margin-top: 3rem;
 }
 
 .icon{
@@ -131,14 +130,21 @@ h2{
     display: none;
 }
 
-.text-title{
-    font-size: 7rem;
+.text-title-1, .text-title-2, .text-title-3{
+    font-size: 8rem;
     color: var(--white);
     font-family: var(--fuenteRanchers);
     text-shadow: -3px -3px 25px var(--black), 3px -3px 25px var(--black), -3px 3px 25px var(--black), 3px 3px 25px var(--black);
     letter-spacing: 7px;
-    /* line-height: 8rem; */
 }
+
+/* .text-title{
+    font-size: 8rem;
+    color: var(--white);
+    font-family: var(--fuenteRanchers);
+    text-shadow: -3px -3px 25px var(--black), 3px -3px 25px var(--black), -3px 3px 25px var(--black), 3px 3px 25px var(--black);
+    letter-spacing: 7px;
+} */
 
 .text-subtitle{
     color: var(--lead-number);
@@ -165,15 +171,85 @@ h2{
     color: var(--white);
 }
 
+.container{
+    width: auto;
+    height: auto;
+    /* position: fixed; */
+}
+
+.redes-sociales{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 15.8%;
+    right: 0%;
+    border-radius: 8px,
+    /* border: 2px solid white; */
+}
+
+.redes-sociales hr{
+    border: 5px solid var(--main-color);
+    border-radius: 8px;
+    /* both: tambien servía para detener la animación */
+    animation: bottomTop 2.5s forwards;
+}
+
+@keyframes bottomTop{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 150px;
+    }
+}
+
+.red-social-media{
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    width: 35rem;
+    height: 8rem;
+    bottom: 11%;
+    right: 14%;
+}
+
+.red-social-media .button{
+    border: 3.5px solid var(--black);
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-color);
+    color: var(--black);
+    cursor: pointer;
+}
+
+
+.icon-social-media i{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.icon-social-media .fab.fa-instagram{
+    font-size: 34px;
+}
+
 @media screen and (max-width: 768px){
     .textos{
         align-items: center;
         text-align: center;
-        
     }
 
-    .text-title{
-        font-size: 7rem;
+    .text-title-1, .text-title-2, .text-title-3{
+        font-size: 7.5rem;
     }
 
     .text-subtitle{
@@ -201,7 +277,6 @@ h2{
     .enlaces.is-active{
         left: 0%;
     }
-
 
     .enlaces a{
         font-size: 3rem;    
@@ -233,6 +308,7 @@ h2{
     .logo{
         z-index: 1000;
     }
+
     .text-button{
         width: 100%;
     }
@@ -246,9 +322,10 @@ h2{
 
 .about-main{
     display: grid;
-    grid-template-columns: 56% 44%;
+    grid-template-columns: 55% 45%;
     justify-content: center;
-    column-gap: 2.6rem;
+    column-gap: 2.5rem;
+    height: auto;
 }
 
 .about-text{
@@ -286,12 +363,12 @@ h2{
 
 .about-text{
     padding: 0 0 0 1rem;
-    font-size: 3.6rem;
     color: var(--text-color);
     line-height: 1.1;
 }
 
 .about-text-parrafo{
+    font-size: 3.55rem;
     padding-bottom: 2.5rem;
 }
 
@@ -299,7 +376,7 @@ h2{
     padding-bottom: 0;
 }
 
-.about-img{
+.about-img-button{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -308,19 +385,20 @@ h2{
 
 .about-img-photo{
     border-radius: 50%;
-    width: 38rem;
+    max-width: 74%;
 }
 
 .about-button{
     display: block;
-    margin: 0 auto;
     border-radius: 2.5rem;
+    margin: 0 auto;
     font-family: var(--fuenteRanchers);
     font-size: 3rem;
     padding: 1rem 3rem;
     text-transform: uppercase;
     background: var(--main-color);
-    color: white;
+    color: var(--fuxia-color);
+    text-decoration: none;
     border: none;
     cursor: pointer;
     margin-top: 3rem;
@@ -365,9 +443,11 @@ h2{
 
 .skills-icons{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 4rem;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 3.5rem;
+    row-gap: 3.5rem;
     align-items: center;
+    padding: 2rem;
     /* border: 4px solid yellowgreen; */
 }
 
@@ -376,6 +456,7 @@ h2{
 .skill-icon-git, .skill-icon-github{
     width: 12rem;
     height: 12rem;
+    /* w y h 12rem */
     -webkit-box-shadow: 0px 0px 5px 7px rgba(230,230,230,1);
     -moz-box-shadow: 0px 0px 5px 7px rgba(230,230,230,1);
     box-shadow: 0px 0px 5px 7px rgba(230,230,230,1);
@@ -389,6 +470,7 @@ h2{
 .skill-icon-git img, .skill-icon-github img{
     width: 7rem;
     height: 7rem;
+    /* w y h 7rem */
     margin-bottom: 0.5rem;
 }
 
@@ -673,13 +755,12 @@ form{
     font-weight: 100;
 }
 
-.contact-formulario input, .contact-formulario textarea{
+.contact-formulario input:not(:last-child), .contact-formulario textarea{
     border: 0;
     border-bottom: 0.2rem solid var(--black);
     width: 100%;
     height: 4rem;
     font-size: 2.5rem;
-    /* background-color: #E1E1E1; */
     padding: 2.2rem 0.5rem;
     margin-bottom: 2rem;
     color: var(--text-color);
@@ -692,7 +773,7 @@ form{
 }
 
 
-.contact-formulario input[type="submit"]{
+input[type="submit"]{
     border: 0;
     border-radius: 3rem;
     font-family: var(--fuenteRanchers);
@@ -703,7 +784,7 @@ form{
     margin: 0 auto;
     cursor: pointer;
     font-size: 2.5rem;
-    padding: 0.8rem 0.5rem;
+    padding: 2rem 3rem;
     background-color: var(--second-color);
     text-shadow: -3px -3px 1px var(--black), 3px -3px 1px var(--black), -3px 3px 1px var(--black), 3px 3px 1px var(--black);
 }
@@ -790,7 +871,7 @@ form{
 }
 
 /* SCROLL COLOR */
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 12px;
     background: #e7a61a;
 }
@@ -799,13 +880,17 @@ body::-webkit-scrollbar-thumb{
     background: var(--text-color);
     border-radius: 8px;
     border: 3px solid var(--white);
-} */
+}
 
 
 @media screen and (max-width: 1200px){
-    .about-text{
-        font-size: 3.2rem;
-    } 
+    .about-text-parrafo{
+        font-size: 3.5rem;
+    }
+    
+    .about-img-photo{
+        max-width: 85%;
+    }
 
     .skills-icons{
         grid-template-columns: repeat(3,1fr);
@@ -862,12 +947,29 @@ body::-webkit-scrollbar-thumb{
     .footer-copyright{
         font-size: 2rem;
     }
-
 }
 
 
 @media screen and (max-width: 1024px){
-    .about-text{
+    .redes-sociales hr{
+        display: none;
+    }
+
+    .textos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container{
+        margin-top: 1.5rem;
+    }
+
+    .red-social-media{
+        position: static;
+    }
+
+    .about-text-parrafo{
         font-size: 3.1rem;
     }
 
@@ -905,6 +1007,44 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 992px){
+
+    .about-main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-text{
+        order: 2;
+        margin-top: 3rem;
+    }
+
+    /* .red-social-media{
+        bottom: 2%;
+        right: 30%;
+    } */
+
+    .about-text-parrafo{
+        font-size: 4.8rem;
+    }
+
+     .about-button{
+        font-size: 3.5rem;
+        padding: 2.5rem 4rem;
+        border-radius: 40px;
+    } 
+
+    .about-img-photo{
+        width: 90%;
+    }
+
+    .about-img{
+        order: 1;
+    }
+
+    .skills-icons{
+        grid-template-columns: 20% 20% 20% 20%;
+        margin-top: 3rem;
+    }
 
     .contenedor-projects{
         grid-template-columns: 100%;
@@ -1030,39 +1170,15 @@ body::-webkit-scrollbar-thumb{
         display: none;
     }
 
-    .about-main{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .about-text{
-        order: 2;
-        font-size: 4.8rem;
-        margin-top: 3rem;
-    }
-
-    .about-img-button{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-    }
-
-    .about-img-photo{
-        width: 90%;
-    }
-
-    .about-img{
-        order: 1;
+    .skills-icons{
+        grid-template-columns: 20% 20% 20% 20%;
+        column-gap: 4rem;
+        row-gap: 0rem;
     }
 
     .skills-icons{
-        grid-template-columns: 20% 20% 20% 20%;
+        grid-template-columns: 23% 23% 23%;
         margin-top: 3rem;
-    }
-
-    .skill-icon{
-        margin: 0 auto;
     }
 
     .project-1, .project-2, .project-3,
@@ -1142,8 +1258,13 @@ body::-webkit-scrollbar-thumb{
         justify-content: center;
     }
 
-    .text-title{
-        font-size: 6.5rem;
+    .about-text-parrafo{
+        font-size: 4rem;
+    }
+
+    .text-title-1, .text-title-2, .text-title-3{
+        margin: 0rem 2rem;
+        font-size: 7rem;
     }    
 
     .projects-title{
@@ -1155,7 +1276,9 @@ body::-webkit-scrollbar-thumb{
     }
 
     .skills-icons{
-        grid-template-columns: 23% 23% 23%;
+        grid-template-columns: 45% 45%;
+        column-gap: 0rem;
+        /* margin: 0 auto; */
         margin-top: 3rem;
     }
 
@@ -1188,7 +1311,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     .project-hover-description{
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
 
     .project-hover button{
@@ -1204,20 +1327,27 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 485px){
-    .text-title{
-        font-size: 5.2rem;
+    .text-title-1, .text-title-2, .text-title-3{
+        font-size: 5.8rem;
+        margin: 0rem 3rem;
     }    
     
-    .text-subtitle{
-        font-size: 4rem;
-    }
-
-    .about-text{
-        font-size: 3rem;
-    }
-
     .about-button{
+        font-size: 2rem;
+        padding: 1.5rem;
+    }
+
+    .text-subtitle{
+        font-size: 3.8rem;
+    }
+
+    .about-text-parrafo{
         font-size: 2.5rem;
+    }
+
+    .text-button{
+        padding: 1rem 2rem;
+        font-size: 2rem;
     }
 
     .skills-image-content p{
@@ -1240,8 +1370,8 @@ body::-webkit-scrollbar-thumb{
     }
 
     .skills-icons{
-        grid-template-columns: 38% 38%;
-        margin-top: 3rem;
+        grid-template-columns: 45% 45%;
+        margin: 3rem -3rem;
     }
 
     .contenedor-projects{
@@ -1279,7 +1409,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     .project-hover-description{
-        font-size: 2.6rem;
+        font-size: 2.65rem;
         margin: 1rem 2.8rem;
     }
 
@@ -1299,7 +1429,9 @@ body::-webkit-scrollbar-thumb{
     }
 
     .skills-icons{
+        grid-template-columns: 100%;
         margin: 0;
+        padding: 0;
     }
 
     .projects-description p{
