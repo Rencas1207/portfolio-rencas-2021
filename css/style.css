@@ -66,8 +66,34 @@ h2{
 }
 
 [id]{
-    scroll-margin-top: 7ex;
+    scroll-margin-top: 9ex;
 }
+
+.scroll-top-btn{
+    position: fixed;
+    z-index: 99;
+    bottom: 1.5vh;
+    right: calc(6rem + 1vw);
+    width: 6rem;
+    height: 6rem;
+    border: 0;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 4rem;
+    background-color: var(--link-bar);
+    color:black;
+    cursor: pointer;
+    outline: 0;
+    transition: all 0.3s ease-out;
+    /* border: 5px solid var(--link-bar); */
+}
+
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
 
 .header{
     background: url(../src/img/hero-image.webp) no-repeat center center fixed;
@@ -80,12 +106,12 @@ h2{
 .navegacion{
     position: fixed;
     width: 100%;
-    /* height: 6rem; */
     background: var(--main-color);
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.65);
+    box-shadow: 0 .3rem .4rem #444;
     z-index: 999;
+    /* box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.65); */
 }
 
 .contenido-header{
@@ -94,7 +120,7 @@ h2{
     align-items: center;
 }
 
- .logo img{
+.logo img{
     width: 16rem;
 }
 
@@ -138,20 +164,49 @@ h2{
     letter-spacing: 7px;
 }
 
-/* .text-title{
-    font-size: 8rem;
-    color: var(--white);
-    font-family: var(--fuenteRanchers);
-    text-shadow: -3px -3px 25px var(--black), 3px -3px 25px var(--black), -3px 3px 25px var(--black), 3px 3px 25px var(--black);
-    letter-spacing: 7px;
-} */
-
-.text-subtitle{
+/* .text-subtitle{
     color: var(--lead-number);
     font-size: 5.5rem;
     font-family: var(--fuenteRancho);
     text-shadow: -5px -5px 5px var(--black), 5px -5px 5px var(--black), -5px 5px 5px var(--black), 5px 5px 5px var(--black);
     margin-top: 2rem;
+} */
+
+.textos .text-subtitle {
+    color: var(--lead-number);
+    font-size: 5.5rem;
+    font-family: var(--fuenteRancho);
+    text-shadow: -5px -5px 5px var(--black), 5px -5px 5px var(--black), -5px 5px 5px var(--black), 5px 5px 5px var(--black);
+    margin-top: 2rem;
+    display: flex;
+}
+
+.textos .text-subtitle .wrapper {
+	/* display: flex; */
+	overflow: hidden;
+    padding: .8rem;
+}
+
+.textos .text-subtitle .wrapper span {
+	position: relative;
+	bottom: -70px;
+	animation: reveal 1s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes reveal {
+	0% {
+		bottom: -70px;
+	}
+	100% {
+		bottom: 0px;
+	}
+}
+
+.container-button{
+    width: 400px;
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
 }
 
 .text-button{
@@ -164,6 +219,23 @@ h2{
     font-family: var(--fuenteRanchers);
     color: var(--text-color);
     cursor: pointer;
+    outline: 0;
+    position: relative;
+    animation: reveal3 2s ease-in-out forwards;
+    animation-delay: 1s;
+    right: -100px;
+    opacity: 0;
+}
+
+@keyframes reveal3{
+    0%{
+        right: -100px;
+        opacity: 0;
+    }
+    100%{
+        right: 0px;
+        opacity: 1;
+    }
 }
 
 .text-button:hover{
@@ -217,6 +289,7 @@ h2{
     height: 8rem;
     bottom: 11%;
     right: 14%;
+    overflow: hidden;
 }
 
 .red-social-media .button{
@@ -230,8 +303,21 @@ h2{
     background: var(--main-color);
     color: var(--black);
     cursor: pointer;
+    outline: 0; 
+    position: relative;
+    animation: reveal1 3s ease-in-out forwards;
+    left: -500px;
+    
 }
 
+@keyframes reveal1{
+    0% {
+		left: -500px;
+	}
+	100% {
+		left: 0px;
+	}
+}
 
 .icon-social-media i{
     font-size: 28px;
@@ -266,12 +352,14 @@ h2{
         background-color: var(--text-color);
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         /* margin-top: 5.4rem; */
-        padding: 0;
+        /* margin: 1rem 0rem; */
+        padding: 1rem 0;
         text-align: center;
         align-items: center;
         transition: all 0.4s ease;
+        overflow: hidden;
     }
 
     .enlaces.is-active{
@@ -402,6 +490,7 @@ h2{
     border: none;
     cursor: pointer;
     margin-top: 3rem;
+    outline: 0;
 }
 
 /* SKILLS */
@@ -648,6 +737,7 @@ h2{
     border-radius: 4rem;
     cursor: pointer;
     margin: 2.2rem 1rem;
+    outline: 0;
 }
 
 .project-hover-button-view{
@@ -675,6 +765,73 @@ h2{
         transform: translateX(0%);
     }
 }
+
+/*--------Modal---------- */
+.modal{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+    
+}
+
+.modal-content{
+    position: relative;
+    
+}
+
+.modal-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal-close svg{
+    width: 3rem;
+    height: 3rem;
+    fill: var(--fuxia-color);
+}
+
+.modal[id|="trabajo"]:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.portfolio-modal{
+    background: var(--white);
+    padding: 1rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-modal h3{
+    border-bottom: medium solid var(--first-color);
+    padding: .5rem 0;
+    margin: 1rem auto;
+    color: var(--title-color);
+}
+
+.portfolio-details{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-auto-rows: 2rem;
+}
+
+.portfolio-details b{
+    color: var(--first-color);
+}
+
+
 
 /* CONTACT */
 .contact{
@@ -765,6 +922,7 @@ form{
     margin-bottom: 2rem;
     color: var(--text-color);
     font-family: var(--fuenteRancho);
+    outline: 0;
 }
 
 .contact-formulario textarea{
@@ -783,8 +941,9 @@ input[type="submit"]{
     color: var(--white);
     margin: 0 auto;
     cursor: pointer;
-    font-size: 2.5rem;
-    padding: 2rem 3rem;
+    outline: 0;
+    font-size: 2.8rem;
+    padding: 1rem 2rem;
     background-color: var(--second-color);
     text-shadow: -3px -3px 1px var(--black), 3px -3px 1px var(--black), -3px 3px 1px var(--black), 3px 3px 1px var(--black);
 }
@@ -821,13 +980,6 @@ input[type="submit"]{
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-}
-
-
-.contenido-footer .logo img{
-    width: 17rem;
-    align-items: center;
-    cursor: pointer;
 }
 
 .contenido-footer .red-social{
