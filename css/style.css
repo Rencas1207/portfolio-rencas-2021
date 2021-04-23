@@ -345,7 +345,7 @@ h2{
         background-color: var(--text-color);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         /* margin-top: 5.4rem; */
         /* margin: 1rem 0rem; */
         padding: 1rem 0;
@@ -366,9 +366,9 @@ h2{
         margin: 3rem;
     }
 
-    .enlaces a:first-child{
-        margin-top: 5rem;
-    }
+    /* .enlaces a:first-child{
+        margin-top: 0rem;
+    } */
 
     .enlaces a:hover{
         background: var(--main-color);
@@ -429,13 +429,15 @@ h2{
     font-family: var(--fuenteRanchers);
     font-size: 6rem;
     text-transform: uppercase;
+    /* text-decoration: underline;
+    color: var(--link-bar); */
 }
 
 .about-title hr{
     border: 5px solid var(--link-bar);
     background: var(--link-bar);
-    margin-top: 1rem;
-    width: 120%;
+    margin-top: .5rem;
+    width: 115%;
 }
 
 .about-number{
@@ -512,9 +514,8 @@ h2{
 
 .skills-title hr{
     border: 5px solid var(--link-bar);
-    background: var(--link-bar);
-    margin-top: 1rem;
-    width: 120%;
+    margin-top: .5rem;
+    width: 115%;
 }
 
 .skills-number{
@@ -610,9 +611,8 @@ h2{
 
 .projects-title hr{
     border: 5px solid var(--link-bar);
-    background: var(--link-bar);
-    margin-top: .2rem;
-    width: 120%;
+    margin-top: .5rem;
+    width: 115%;
 }
 
 .projects-description p{
@@ -940,9 +940,8 @@ h2{
 
 .contact-title hr{
     border: 5px solid var(--link-bar);
-    background: var(--link-bar);
-    margin-top: .2rem;
-    width: 120%;
+    margin-top: .5rem;
+    width: 115%;
 }
 
 .contact-description p{
@@ -1452,51 +1451,22 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 768px){
-    .about-title-number{
+    .about-title-number, .skills-title-number,
+    .projects-title-number, .contact-title-number{
         justify-content: center;
     }
     
-    .about-title hr{
-        margin-left: -1.8rem;
-    }
-
-    .about-number{
-        display: none;
-    }
-
-    .skills-title-number{
-        justify-content: center;
-    }
-
-    .skills-title hr{
-        margin-left: -1.8rem;
-    }
-
-    .skills-number{
-        display: none;
-    }
-
-    .projects-title-number{
-        justify-content: center;
+    .about-title hr, .skills-title hr,
+    .contact-title hr{
+        margin-left: -1.7rem;
     }
 
     .projects-title hr{
-        margin-left: -2.5rem;
+        margin-left: -2.3rem;
     }
 
-    .projects-number{
-        display: none;
-    }
-
-    .contact-title-number{
-        justify-content: center;
-    }
-
-    .contact-title hr{
-        margin-left: -2.5rem;
-    }
-
-    .contact-number{
+    .about-number, .skills-number, 
+    .projects-number, .contact-number{
         display: none;
     }
 
@@ -1511,11 +1481,11 @@ body::-webkit-scrollbar-thumb{
         margin-top: 3rem;
     }
 
-    .project-1, .project-2, .project-3,
+    /* .project-1, .project-2, .project-3,
     .project-4, .project-5, .project-6{
         width: 100%;
         height: 100%;
-    }
+    } */
 
     .project-1-content > p, .project-2-content > p, .project-3-content > p,
     .project-4-content > p, .project-5-content > p, .project-6-content > p{
@@ -1542,12 +1512,7 @@ body::-webkit-scrollbar-thumb{
 
     .project-hover-description{
         font-size: 4.6rem;
-        
     }
-
-    /* .project-hover button{
-        margin: 4rem;
-    } */
 
     .project-hover a{
         font-size: 2.2rem;
@@ -1583,25 +1548,24 @@ body::-webkit-scrollbar-thumb{
 
 @media screen and (max-width: 650px){
 
-    .about-title h2, .skills-title h2, 
-    .projects-title h2, .contact-title h2{
-        font-size: 4.5rem;
-    }
-
-    .about-title hr{
-        width: 120%;
-        border: 4px solid var(--link-bar);
-        justify-content: center;
-    }
-
     .about-text-parrafo{
         font-size: 4rem;
+        
     }
 
     .text-title-1, .text-title-2, .text-title-3{
+        font-size: 5.8rem;
         margin: 0rem 2rem;
-        font-size: 7rem;
     }    
+
+    .text-subtitle .wrapper-1{
+        font-size: 4rem;
+    }
+
+    .text-button{
+        padding: 1rem 2rem;
+        font-size: 2rem;
+    }
 
     .projects-title{
         font-size: 1rem;
@@ -1613,15 +1577,7 @@ body::-webkit-scrollbar-thumb{
 
     .skills-icons{
         grid-template-columns: 45% 45%;
-        column-gap: 0rem;
-        /* margin: 0 auto; */
         margin-top: 3rem;
-    }
-
-    .project-1, .project-2, .project-3,
-    .project-4, .project-5, .project-6{
-        width: 100%;
-        height: 100%;
     }
 
     .project-1-content > p, .project-2-content > p, .project-3-content > p,
@@ -1651,45 +1607,32 @@ body::-webkit-scrollbar-thumb{
         margin: 0rem 3rem;
     }
 
-    /* .project-hover button{
-        font-size: 2rem;
-        margin: 3rem 1.5rem;
-    } */
-
     .project-hover a{
         font-size: 2.2rem;
         margin: 3rem 1rem;
     }
-
-    /* .project-hover a i{
-        padding-left: 1rem;
-        padding-bottom: .2rem;
-    } */
 
     .contenedor-projects{
         grid-template-columns: 95%;
         margin: 0 auto;
     }  
 
+    .contact-formulario{
+        margin: 0;
+        padding: 0rem;
+    }
+
 }
 
-@media screen and (max-width: 493px){
-    .text-title-1, .text-title-2, .text-title-3{
-        font-size: 5.8rem;
-        margin: 0rem 3rem;
-    }    
+@media screen and (max-width: 493px){ 
     
-    .about-button{
-        font-size: 2rem;
-        padding: 1.5rem;
-    }
+    .text-title-1, .text-title-2, .text-title-3{
+        font-size: 5rem;
+        margin: 0rem 2rem;
+    }    
 
-    .text-subtitle{
-        font-size: 3.8rem;
-    }
-
-    .about-text-parrafo{
-        font-size: 2.5rem;
+    .text-subtitle .wrapper-1{
+        font-size: 3.5rem;
     }
 
     .text-button{
@@ -1697,9 +1640,31 @@ body::-webkit-scrollbar-thumb{
         font-size: 2rem;
     }
 
+    .about-title h2, .skills-title h2, 
+    .projects-title h2, .contact-title h2{
+        font-size: 4.5rem;
+    }
+
+    .about-title hr, .skills-title hr,
+    .contact-title hr{
+        margin-left: -1.4rem;
+    }
+
+    .projects-title hr{
+        margin-left: -1.8rem;
+    }
+
+    .about-button{
+        font-size: 2.5rem;
+        padding: 1.8rem 2rem;
+    }
+
+    .about-text-parrafo{
+        font-size: 2.8rem;
+    }
+
     .skills-image-content p{
         font-size: 2.3rem;
-        margin: 0;
     }
 
     .skills-image-content img{
@@ -1768,11 +1733,45 @@ body::-webkit-scrollbar-thumb{
     .project-hover a i{
         padding-left: .5rem;
     }
+    
+    input[type="submit"]{
+        width: 100%;
+        font-size: 2.4rem;
+    }
 
+    .footer-copyright{
+        font-size: 1.6rem;
+    }
     
 }
 
-@media screen and (max-width: 370px){
+@media screen and (max-width: 373px){
+
+    .text-title-1, .text-title-2, .text-title-3{
+        font-size: 4.5rem;
+        margin: 0;
+    }    
+
+    .text-subtitle .wrapper-1{
+        font-size: 3.2rem;
+    }
+
+    .red-social-media{
+        width: 25rem;
+    }
+
+    .red-social-media .button{
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-social-media i{
+        font-size: 20px;
+    }
+
+    .icon-social-media .fab.fa-instagram{
+        font-size: 30px;
+    }
 
     .skills-image-content p{
         font-size: 2rem;
@@ -1794,12 +1793,6 @@ body::-webkit-scrollbar-thumb{
     .contact-description p{
         font-size: 2rem;
         margin: 0rem 1rem;
-    }
-
-    .project-1, .project-2, .project-3,
-    .project-4, .project-5, .project-6{
-        width: 100%;
-        height: 100%;
     }
 
     .project-1-content > p, .project-2-content > p, .project-3-content > p,
@@ -1838,5 +1831,18 @@ body::-webkit-scrollbar-thumb{
     .project-hover a i{
         padding-left: .4rem;
         padding-bottom: .2rem;
+    }
+
+    .red-social-media-footer{
+        width: 26rem;
+    }
+
+    .red-social-media-footer .button{
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-copyright{
+        font-size: 1.25rem;
     }
 }

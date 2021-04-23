@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", e => {
     scrollTopButton(".scroll-top-btn");
-    navegacionFija();
+    // navegacionFija();
 });
 
 
