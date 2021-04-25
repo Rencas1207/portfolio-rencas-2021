@@ -74,6 +74,50 @@ h2{
     min-height: 100vh;
 }
 
+.animate-top, .animate-left, .animate-right{
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.showTop{
+    animation: showTop 800ms ease;
+}
+
+.showLeft{
+    animation: showLeft 500ms ease-out;
+}
+
+.showRight{
+    animation: showRight 500ms ease-out;
+}
+
+@keyframes showLeft{
+    0%{
+        transform: translateX(-300px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes showRight{
+    0%{
+        transform: translateX(300px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes showTop{
+    0%{
+        transform: translateY(80px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
 .scroll-top-btn{
     position: fixed;
     z-index: 99;
@@ -98,12 +142,10 @@ h2{
     margin-top: .75rem;
 }
 
-
 .hidden{
     visibility: hidden;
     opacity: 0;
 }
-
 
 .header{
     background: url(../src/img/hero-image.webp) no-repeat center center fixed;
@@ -227,8 +269,8 @@ h2{
     cursor: pointer;
     outline: 0;
     position: relative;
-    animation: reveal3 2s ease-in-out forwards;
-    animation-delay: 1s;
+    animation: reveal3 1s ease-in forwards;
+    animation-delay: 1.5s;
     right: -100px;
     opacity: 0;
 }
@@ -262,8 +304,8 @@ h2{
 
 .redes-sociales hr{
     border-radius: 8px;
-    animation: bottomTop 2s forwards;
-    animation-delay: 2s;
+    animation: bottomTop 1.5s forwards;
+    animation-delay: 1.5s;
 }
 
 @keyframes bottomTop{
@@ -299,13 +341,13 @@ h2{
     cursor: pointer;
     outline: 0; 
     position: relative;
-    animation: reveal1 5s ease-in-out forwards;
-    right: -500px;
+    animation: reveal1 3s ease-in-out forwards;
+    right: -1000px;
 }
 
 @keyframes reveal1{
     0% {
-		right: -500px;
+		right: -1000px;
 	}
 	100% {
 		right: 0px;
@@ -502,7 +544,7 @@ h2{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 3rem 0rem;  
+    padding: 3rem 0rem 0 0;  
 }
 
 .skills-title h2{
@@ -529,6 +571,7 @@ h2{
 
 .skills-main{
     display: flex;
+    margin: 5rem 0 5rem 0;
     /* margin: 5rem 0 5rem 0; */
 }   
 
@@ -1467,6 +1510,7 @@ body::-webkit-scrollbar-thumb{
     .contenido-contact{
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     .contact-formulario{
@@ -1552,6 +1596,10 @@ body::-webkit-scrollbar-thumb{
         background: none;
     }
 
+    .formulario{
+        padding: 2rem;
+    }
+
     .contenido-contact{
         display: flex;
         flex-direction: column;
@@ -1559,13 +1607,17 @@ body::-webkit-scrollbar-thumb{
 
     .contact-formulario{
         order: 2;
-        margin: 4rem auto;
+        margin: 1rem auto;
     }
 
     .contact-image{
         order: 1;
         margin: 0 auto;
         max-width: 70%;
+    }
+
+    input[type="submit"]{
+        width: 100%;
     }
 }
 
@@ -1646,6 +1698,10 @@ body::-webkit-scrollbar-thumb{
         grid-template-columns: 95%;
         margin: 0 auto;
     }  
+
+    .formulario{
+        margin-bottom: 2rem;
+    }
 
     .contact-formulario{
         margin: 0;

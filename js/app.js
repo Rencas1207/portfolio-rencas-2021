@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", e => {
     scrollTopButton(".scroll-top-btn");
-    // navegacionFija();
 });
-
 
 ((d) => {
     const $btnMenu = d.querySelector(".icon"),
@@ -95,6 +93,41 @@ function scrollTopButton(btn){
         }
     });
 }
+
+function showScroll(){
+    const $animateTop = document.querySelectorAll('.animate-top'),
+        $animateLeft = document.querySelectorAll('.animate-left'),
+        $animateRight = document.querySelectorAll('.animate-right');
+
+    let scrollTop = document.documentElement.scrollTop,
+    heightAnimate;
+
+    for (let i = 0; i < $animateTop.length; i++) {
+        heightAnimate = $animateTop[i].offsetTop;
+        if(heightAnimate - 580 < scrollTop){
+            $animateTop[i].style.opacity = 1;
+            $animateTop[i].classList.add('showTop');
+        }
+    }
+
+    for (let i = 0; i < $animateLeft.length; i++) {
+        heightAnimate = $animateLeft[i].offsetTop;
+        if(heightAnimate - 500 < scrollTop){
+            $animateLeft[i].style.opacity = 1;
+            $animateLeft[i].classList.add('showLeft');
+        }
+    }
+
+    for (let i = 0; i < $animateRight.length; i++) {
+        heightAnimate = $animateRight[i].offsetTop;
+        if(heightAnimate - 500 < scrollTop){
+            $animateRight[i].style.opacity = 1;
+            $animateRight[i].classList.add('showRight');
+        }
+    }
+}
+
+window.addEventListener('scroll', showScroll);
 
 // const $hamburgesa = document.querySelector("#container-menu"),
 //     $cerrar = document.querySelector(".icon-close"),
