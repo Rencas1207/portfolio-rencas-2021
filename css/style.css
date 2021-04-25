@@ -544,7 +544,7 @@ h2{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 3rem 0rem 0 0;  
+    padding: 3rem 0 0 0;  
 }
 
 .skills-title h2{
@@ -1385,11 +1385,10 @@ body::-webkit-scrollbar-thumb{
 
     .portfolio-modal{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: auto;
         flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
     }
 
     .portfolio-info p{
