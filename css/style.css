@@ -1067,7 +1067,7 @@ h2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
-    padding: 3rem 0rem;
+    padding: 3rem 0rem 5rem 0;
 }
 
 .contact-formulario{
@@ -1110,7 +1110,7 @@ h2{
 
 .input-data-textarea label{
     position: absolute;
-    bottom: 140px;
+    bottom: 160px;
     left: 0;
     color: var(--text-color);
     font-family: var(--fuenteRancho);
@@ -1546,7 +1546,7 @@ body::-webkit-scrollbar-thumb{
     .contenido-contact{
         display: flex;
         flex-direction: column;
-        padding: 0;
+        padding: 3rem 0 5.2rem 0;
     }
 
     .contact-formulario{
@@ -1658,10 +1658,10 @@ body::-webkit-scrollbar-thumb{
         padding: 2rem;
     }
 
-    .contenido-contact{
+    /* .contenido-contact{
         display: flex;
         flex-direction: column;
-    }
+    } */
 
     .contact-formulario{
         order: 2;
