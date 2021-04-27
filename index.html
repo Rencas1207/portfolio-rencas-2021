@@ -19,7 +19,7 @@
                 <div class="contenido-header">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="src/img/logo.png" alt="Logo de Rencas">
+                            <img src="src/img/logo-dark.png" alt="Logo de Rencas">
                         </a>
                     </div>
                     <div class="icon">
@@ -214,7 +214,7 @@
                     <div class="skills-image-content">
                         <p>
                             Creo sitios web receptivos exitosos que son rápidos, fáciles de usar 
-                            y construidos con las mejores prácticas, de las cuales hago el uso de mis habilidades.
+                            y construidos con las mejores prácticas...
                         </p>
                         <img src="./src/img/skills.svg" alt="">
                     </div>
@@ -607,12 +607,12 @@
                 <div class="contact-formulario animate-top">
                     <form class="formulario">
                         <div class="input-data">
-                            <input type="text" required>
+                            <input type="text" name="name" title="Nombre sólo acepta letras y espacios en blanco" pattern= "^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required >
                             <div class="underline"></div>
                             <label for="Nombre">Name</label>
                         </div>
                         <div class="input-data">
-                            <input type="email" required>
+                            <input type="email" name="email" title="Email inválido" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
                             <div class="underline"></div>
                             <label for="Email">Email</label>
                         </div>
@@ -623,13 +623,26 @@
                             <label for="Mensaje">Message</label>
                         </div>
                         
+                        <div class="contact-form-loader none text-center" >
+                            <img src="src/img/loader.svg" alt="Enviando...">
+                        </div>
+
                         <input class="button" type="submit" value="Send   Message!">
-                    </form>                   
+                    </form> 
+                    <article id="gracias" class="modal">
+                        <div class="modal-content">
+                            <article class="contact-form-responsive">
+                                <h3>¡Muchas Gracias! <br> Por tus comentarios </h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z"/><path d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8 s3.589-8,8-8s8,3.589,8,8S16.411,20,12,20z"/><path d="M13 12l2 .012C15.012 11.55 15.194 11 16 11s.988.55 1 1h2c0-1.206-.799-3-3-3S13 10.794 13 12zM8 11c.806 0 .988.55 1 1h2c0-1.206-.799-3-3-3s-3 1.794-3 3l2 .012C7.012 11.55 7.194 11 8 11z"/></svg>
+                            </article>
+                        </div>
+                    </article>                  
                 </div>
                 <div class="contact-image animate-top">
                     <img src="src/img/contact.svg" alt="image of Contact">
                 </div>
             </div>
+
         </section>
     </section>
 
