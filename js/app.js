@@ -1,30 +1,54 @@
 document.addEventListener("DOMContentLoaded", e => {
+    loader();
+    menu();
+    maquinaDeEscribir();
     scrollTopButton(".scroll-top-btn");
+    showScroll();
+
 });
 
-((d) => {
-    const $btnMenu = d.querySelector(".icon"),
-        $menu = d.querySelector(".enlaces");
+function loader(){
+    const loader = document.querySelector(".loader");
+    const body = document.querySelector(".body");
+    window.onload = () =>{
+        setTimeout(function(){
+            loader.style.opacity = "0";
+            
+            setTimeout(function(){
+                loader.style.display = "none";
+                
+            },1500);
+        }, 1500);
+    }
+}
+
+function menu(){
+    ((d) => {
+        const $btnMenu = d.querySelector(".icon"),
+            $menu = d.querySelector(".enlaces");
+        
+            $btnMenu.addEventListener("click",(e) => {
+                $btnMenu.firstElementChild.classList.toggle("none");
+                $btnMenu.lastElementChild.classList.toggle("none");  
+                $menu.classList.toggle("is-active");
+            
+            });
     
-        $btnMenu.addEventListener("click",(e) => {
-            $btnMenu.firstElementChild.classList.toggle("none");
-            $btnMenu.lastElementChild.classList.toggle("none");  
-            $menu.classList.toggle("is-active");
-        
-        });
+            d.addEventListener("click",(e) => {
+                if(!e.target.matches(".enlaces a")) return false;
+    
+                $btnMenu.firstElementChild.classList.remove("none");
+                $btnMenu.lastElementChild.classList.add("none");
+                $menu.classList.remove("is-active");
+            });
+    
+            
+    })(document);
+}
 
-        d.addEventListener("click",(e) => {
-            if(!e.target.matches(".enlaces a")) return false;
 
-            $btnMenu.firstElementChild.classList.remove("none");
-            $btnMenu.lastElementChild.classList.add("none");
-            $menu.classList.remove("is-active");
-        });
-
-        
-})(document);
-
-const $text1 = document.querySelector('.text-title-1'),
+function maquinaDeEscribir(){
+    const $text1 = document.querySelector('.text-title-1'),
     $text2 = document.querySelector('.text-title-2'),
     $text3 = document.querySelector('.text-title-3');
 
@@ -68,6 +92,8 @@ let writing = (string1 , string2, string3) => {
 };  
 
 writing($text1.textContent, $text2.textContent, $text3.textContent);
+
+}
 
 function scrollTopButton(btn){
     const $scrollBtn = document.querySelector(btn);
@@ -142,7 +168,7 @@ window.addEventListener('scroll', showScroll);
             method: "POST",
             body: new FormData(e.target),
         })
-        .then((res) => (res.ok ? res.json(): Promise.reject(res)))
+        .then((res) => (res.ok ? res.json() : Promise.reject(res)))
         .then((json) =>{
             console.log(json);
             $loader.classList.add("none");

@@ -66,13 +66,65 @@ h2{
 }
 
 [id]{
-    scroll-margin-top: 9ex;
+    scroll-margin-top: 8ex;
 }
 
 .full-lg-screen{
     width: 100%;
     min-height: 100vh;
 }
+
+/* LOADER */
+/* .loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
+    z-index: 99999;
+    position: fixed; 
+    transition: all 0.5s;
+} */
+
+/* .loader .ring{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: 5px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader .ring::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border: 5px solid #ff3d00;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+} */
+
+/* body::-webkit-scrollbar {
+    width: 12px;
+    background: hotpink;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--link-bar);
+    border-radius: 8px;
+} */
+
 
 .animate-top, .animate-left, .animate-right{
     opacity: 0;
@@ -156,6 +208,7 @@ h2{
     /* border: 1px solid red; */
 }
 
+
 .navegacion{
     position: fixed;
     width: 100%;
@@ -180,7 +233,7 @@ h2{
 
 .enlaces a{
     font-size: 2.5rem;
-    margin-left: 3.5rem;
+    margin-left: 3rem;
     color: var(--text-color);
     font-family: var(--fuenteRanchers);
     text-decoration: none;
@@ -216,13 +269,14 @@ h2{
     color: var(--white);
     font-family: var(--fuenteRanchers);
     text-shadow: -3px -3px 25px var(--black), 3px -3px 25px var(--black), -3px 3px 25px var(--black), 3px 3px 25px var(--black);
-    letter-spacing: 7px;
+    letter-spacing: 3.5px;
     padding: .5rem;
 }
 
 .textos .text-subtitle {
     color: var(--lead-number);
     font-size: 5.5rem;
+    font-style: italic;
     font-family: var(--fuenteRancho);
     text-shadow: -5px -5px 5px var(--black), 5px -5px 5px var(--black), -5px 5px 5px var(--black), 5px 5px 5px var(--black);
     margin-top: 2rem;
@@ -371,7 +425,7 @@ h2{
     font-size: 34px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
     .textos{
         align-items: center;
         text-align: center;
@@ -396,11 +450,11 @@ h2{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         /* margin-top: 5.4rem; */
         /* margin: 1rem 0rem; */
         padding: 1rem 0;
         text-align: center;
-        align-items: center;
         transition: all 0.4s ease;
         overflow: hidden;
     }
@@ -410,15 +464,9 @@ h2{
     }
 
     .enlaces a{
-        font-size: 3rem;    
-        width: 100%;
-        padding: 1rem;
-        margin: 3rem;
+        font-size: 3rem;  
+        margin: 4rem 0 0 0;  
     }
-
-    /* .enlaces a:first-child{
-        margin-top: 0rem;
-    } */
 
     .enlaces a:hover{
         background: var(--main-color);
@@ -457,7 +505,7 @@ h2{
     display: grid;
     grid-template-columns: 55% 45%;
     justify-content: center;
-    column-gap: 2.5rem;
+    /* column-gap: 2rem; */
     height: auto;
 }
 
@@ -497,20 +545,55 @@ h2{
 }
 
 .about-text{
-    padding: 0 0 0 1rem;
+    /* padding: 0 0 0 1rem; */
     color: var(--text-color);
-    line-height: 1.1;
+    /* line-height: 1.1; */
 }
 
+.about-text-parrafo:first-child{
+    font-weight: bold;
+    font-style: normal;
+    font-size: 4.5rem;
+    text-align: center;
+    text-shadow: -5px -5px 5px var(--white), 5px -5px 5px var(--white), -5px 5px 5px var(--white), 5px 5px 5px var(--white);
+}
+
+.about-text .description-corta{
+    text-align: center;
+    padding: 1rem 0;
+    
+    font-size: 3.5rem;
+    text-shadow: none;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.about-text .description-encabezado{
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 0rem 0 0rem 0;
+}
+
+.about-text .description{
+    font-size: 3.6rem;
+    /* background: var(--main-color); */
+    /* padding: 2rem; */
+    border-radius: 2rem;
+    /* border: 5px solid var(--fuxia-color);            */
+    color: var(--black);
+    /* font-weight: bold; */
+}
+/* 
 .about-text-parrafo{
-    font-size: 3.55rem;
-    /* font-size: 2vw; */
+    font-size: 3.2rem;
     padding-bottom: 2.5rem;
-}
+} */
 
-.about-text-parrafo:last-child{
+
+
+/* .about-text-parrafo:last-child{
     padding-bottom: 0;
-}
+} */
 
 .about-img-button{
     display: flex;
@@ -661,6 +744,111 @@ h2{
     color: var(--black);
     text-align: center;
 }
+
+/* SERVICES */
+
+/* ABOUT */
+.services{
+    background: var(--text-color);
+    padding-bottom: 3rem;
+    display: grid;
+    place-items: center;
+}
+
+.services-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.services-text{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuenteRancho);
+}
+
+.services-title-number{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3rem 0rem;  
+}
+
+.services-title h2{
+    color: var(--fuxia-color);
+    font-family: var(--fuenteRanchers);
+    font-size: 6rem;
+    text-transform: uppercase;
+    /* text-decoration: underline;
+    color: var(--link-bar); */
+}
+
+.services-title hr{
+    border: 5px solid var(--link-bar);
+    background: var(--link-bar);
+    margin-top: .5rem;
+    width: 115%;
+}
+
+.services-number{
+    font-size: 8rem;
+    font-family: var(--fuenteRanchers);
+    color: var(--lead-number-black);
+}
+
+/* CONTENIDO SERVICES */
+.services-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 3rem 2.5rem;    
+    margin: 3rem 0;
+    color: var(--text-color);
+}
+
+.services-description p{
+    font-family: var(--fuenteRancho);
+    font-size: 3rem; 
+    margin: 0rem 15rem;
+    text-align: center;
+}
+
+.service-card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background: var(--second-color);
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.service-card svg{
+    fill: var(--fuxia-color);
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.service-title{
+    font-size: 2.5rem;
+    font-family: var(--fuenteRanchers);
+    margin: 1rem 0;
+}
+
+.service-description{
+    font-size: 2.5rem;
+    font-family: var(--fuenteRancho);
+    text-align: center;
+    color: var(--black);
+    /* margin: 1rem 0; */
+}
+
+
 
 
 /* PROJECTS */
@@ -1050,7 +1238,7 @@ h2{
 }
 
 .contact-description p{
-    margin: 0rem 20rem;
+    margin: 0rem 15rem;
     font-size: 2.8rem;
     text-align: center;
     font-family: var(--fuenteRancho);
@@ -1273,7 +1461,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb{
     background: var(--link-bar);
     border-radius: 8px;
-    /* border: 3px solid var(--white); */
 }
 
 
@@ -1378,6 +1565,7 @@ body::-webkit-scrollbar-thumb{
         /* margin-top: 9rem; */
     }
 
+
     .skills-image-content{
         display: flex;
         justify-content: center;
@@ -1413,6 +1601,12 @@ body::-webkit-scrollbar-thumb{
         padding: 1rem 0rem;
         width: 78%;
         height: 100%;
+    }
+
+    
+
+    .services-content{
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .projects-description p{
@@ -1568,13 +1762,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 768px){
-    .about-title-number, .skills-title-number,
+    .about-title-number, .skills-title-number, .services-title-number,
     .projects-title-number, .contact-title-number{
         justify-content: center;
     }
     
     .about-title hr, .skills-title hr,
-    .contact-title hr{
+    .services-title hr, .contact-title hr{
         margin-left: -1.7rem;
     }
 
@@ -1582,7 +1776,7 @@ body::-webkit-scrollbar-thumb{
         margin-left: -2.3rem;
     }
 
-    .about-number, .skills-number, 
+    .about-number, .skills-number, .services-number,
     .projects-number, .contact-number{
         display: none;
     }
@@ -1612,6 +1806,26 @@ body::-webkit-scrollbar-thumb{
         height: 80%;
     }
 
+    .services-description p {
+        margin: 0rem 5rem;
+    }
+
+    .services-content{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .service-card svg{
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .service-title{
+        font-size: 3.5rem;
+    }
+
+    .service-description{
+        font-size: 3.8rem;
+    }
 
     .project-1-content > p, .project-2-content > p, .project-3-content > p,
     .project-4-content > p, .project-5-content > p, .project-6-content > p{
@@ -1807,8 +2021,8 @@ body::-webkit-scrollbar-thumb{
         font-size: 2rem;
     }
 
-    .about-title h2, .skills-title h2, 
-    .projects-title h2, .contact-title h2{
+    .about-title h2, .skills-title h2,
+    .services-title h2, .projects-title h2, .contact-title h2{
         font-size: 4.5rem;
     }
 
@@ -1832,6 +2046,28 @@ body::-webkit-scrollbar-thumb{
 
     .skills-image-content p{
         font-size: 2.5rem;
+    }
+
+    .services-description p {
+        font-size: 2.3rem;
+        margin: 0;
+    }
+
+    .services-content{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .service-card svg{
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .service-title{
+        font-size: 2.2rem;
+    }
+
+    .service-description{
+        font-size: 2.2rem;
     }
 
     .contenedor-projects{
@@ -1958,6 +2194,10 @@ body::-webkit-scrollbar-thumb{
     }
 
     .skills-image-content p{
+        font-size: 2rem;
+    }
+
+    .services-description p {
         font-size: 2rem;
     }
 
